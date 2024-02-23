@@ -5,6 +5,11 @@ This microservice manages patient insurance information, enabling operations to 
 
 ## How to Use This Microservice
 
+### Webpage Interface for Data Entry
+To enter or update a patient's insurance information, navigate to the service's homepage. Here, you'll find a straightforward form where you can input the patient's ID, insurance provider, policy number, and coverage details. Upon submission, the form data is sent to the microservice for processing and storage. 
+
+# API Endpoints
+
 **Update Insurance Information**
 
 - **Endpoint**: `POST /api/insurancedata`
@@ -48,4 +53,15 @@ This microservice manages patient insurance information, enabling operations to 
     }
   }
 
-UML Diagram: 
+# Getting Started
+To get started with using the Patient Insurance Information Microservice follow the following steps:
+1. Clone the repository to your local enviornment/machine
+2. Install required dependecies by running npm install
+3. Start the service by executing npm start. Ensure your package.json file includes the script to enable this:
+   ```json
+   "scripts": {
+    "start": "node app.js"
+    }
+This should launch the webpage interface on http://localhost:3000 and the API endpoints will be accessible as described above. 
+
+# UML Diagram: 
