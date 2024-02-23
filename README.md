@@ -64,4 +64,6 @@ To get started with using the Patient Insurance Information Microservice follow 
     }
 This should launch the webpage interface on http://localhost:3000 and the API endpoints will be accessible as described above. 
 
-# UML Diagram: 
+# UML Diagram:
+![UML Diagram](https://github.com/owenrichman/insurance_microservice/blob/master/Microservice.jpg?raw=true)
+
