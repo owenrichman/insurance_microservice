@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Patient Insurance Info</title>
+</head>
+<body>
+    <h1>Update Patient Insurance Information</h1>
+    <form action="/api/insurancedata" method="post">
+        <label for="patientID">Patient ID:</label>
+        <input type="text" id="patientID" name="patientID" required><br><br>
+
+        <label for="insuranceProvider">Insurance Provider:</label>
+        <input type="text" id="insuranceProvider" name="insuranceProvider" required><br><br>
+
+        <label for="policyNumber">Policy Number/ID:</label>
+        <input type="text" id="policyNumber" name="policyNumber" required><br><br>
+
+        <label for="otherDetails">Other Details:</label>
+        <textarea id="otherDetails" name="otherDetails"></textarea><br><br>
+
+        <input type="submit" value="Update Insurance Info">
+    </form>
+</body>
+</html>
