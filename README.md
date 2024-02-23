@@ -22,29 +22,30 @@ This microservice manages patient insurance information, enabling operations to 
       }
   }'
 
-Retrieve Insurance Information
+**Retrieve Insurance Information**
 
-Endpoint: GET /api/insurancedata/{patientID}
-Description: Retrieves insurance information for a specific patient.
-Example Request:
+- **Endpoint**: `GET /api/insurancedata/{patientID}`
+- **Description**: Retrieves insurance information for a specific patient.
+- **Example Request**:
+  ```bash
+  curl http://localhost:3000/api/insurancedata/patient123
 
-curl http://localhost:3000/api/insurancedata/patient123
+**Responses**
 
-Responses
+- On Update: Returns a message indicating the update was successful.
 
-On Update: Returns a message indicating the update was successful.
+  ```json
+  { "message": "Insurance information updated successfully." }
 
-{ "message": "Insurance information updated successfully." }
-
-On Retrieve: Returns the requested insurance details.
-
-{
+- On Retrieve: Returns the requested insurance details.
+  ```bash
+  {
     "patientID": "patient123",
     "insuranceDetails": {
         "provider": "ExampleInsuranceProvider",
         "policyNumber": "P123456789",
         "coverageDetails": "Full coverage"
     }
-}
+  }
 
 UML Diagram: 
