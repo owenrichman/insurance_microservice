@@ -3,7 +3,7 @@ const mysql = require('mysql');
 const connection = mysql.createConnection({
   host: 'localhost',
   user: 'root',
-  password: 'CharlieMojoBlue18!',
+  password: '',
   database: 'ehr_system'
 });
 
