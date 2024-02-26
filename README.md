@@ -50,9 +50,4 @@ To get started with using the Patient Insurance Information Microservice follow 
    - Start server by executing "flask run", or directly with "python -m flask run" this will launch http://localhost:5000 and the API endpoints will be available as described above
 
 # UML Diagram:
-<<<<<<< HEAD
-![UML Diagram]([https://github.com/owenrichman/insurance_microservice/blob/master/Microservice.jpg?raw=true](https://github.com/owenrichman/insurance_microservice/blob/master/FlaskMicroUML.jpg)https://github.com/owenrichman/insurance_microservice/blob/master/FlaskMicroUML.jpg)
-=======
-![UML Diagram]([https://github.com/owenrichman/insurance_microservice/blob/master/Microservice.jpg?raw=true](https://github.com/owenrichman/insurance_microservice/blob/master/FlaskMicroUML.jpg)https://github.com/owenrichman/insurance_microservice/blob/master/FlaskMicroUML.jpg)
-
->>>>>>> origin/master
+![UML Diagram]([https://github.com/owenrichman/insurance_microservice/blob/master/Microservice.jpg?raw=true](https://github.com/owenrichman/insurance_microservice/blob/master/FlaskMicroUML.jpg)https://github.com/owenrichman/insurance_microservice/blob/master/
