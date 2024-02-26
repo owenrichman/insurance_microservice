@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Patient Insurance Info</title>
+    <!-- Include jQuery library from Google CDN for AJAX requests and DOM manipulation -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <!-- Form for updating patient insurance information -->
+    <h1>Update Patient Insurance Information</h1>
+    <form id="updateInsuranceForm" method="post">
+        <!-- Input field for Patient ID -->
+        <label for="patientID">Patient ID:</label>
+        <input type="text" id="patientID" name="patientID" required><br><br>
+
+        <!-- Input field for Insurance Provider -->
+        <label for="insuranceProvider">Insurance Provider:</label>
+        <input type="text" id="insuranceProvider" name="insuranceProvider" required><br><br>
+
+        <!-- Input field for Policy Number/ID -->
+        <label for="policyNumber">Policy Number/ID:</label>
+        <input type="text" id="policyNumber" name="policyNumber" required><br><br>
+
+        <!-- Textarea for any Other Details -->
+        <label for="otherDetails">Other Details:</label>
+        <textarea id="otherDetails" name="otherDetails"></textarea><br><br>
+
+        <!-- Button to trigger form submission via JavaScript -->
+        <input type="button" value="Update Insurance Info" onclick="submitUpdateForm()">
+    </form>
+
+    <!-- Section for requesting patient insurance information -->
+    <h2>Request Patient Insurance Information</h2>
+    <!-- Input field for requesting information by Patient ID -->
+    <label for="requestPatientID">Patient ID:</label>
+    <input type="text" id="requestPatientID" required><br><br>
+    <!-- Button to trigger the information request via JavaScript -->
+    <input type="button" value="Request Insurance Info" onclick="requestInsuranceInfo()">
+
+    <!-- Div to display the requested insurance information -->
+    <div id="insuranceInfoResult"></div>
+
+    <script>
+        // Function to handle the submission of the update form
+        function submitUpdateForm() {
+            $.ajax({
+                url: '/api/insurancedata', // API endpoint
+                type: 'POST', // Method type
+                data: {
+                    patientID: $('#patientID').val(),
+                    insuranceProvider: $('#insuranceProvider').val(),
+                    policyNumber: $('#policyNumber').val(),
+                    otherDetails: $('#otherDetails').val()
+                }, // Data payload
+                success: function(response) {
+                    // Alert on successful data update
+                    alert("Insurance data updated successfully.");
+                },
+                error: function(xhr, status, error) {
+                    // Alert on error
+                    alert("An error occurred: " + xhr.responseText);
+                }
+            });
+        }
+
+        // Function to request and display insurance information
+        function requestInsuranceInfo() {
+            var patientID = $('#requestPatientID').val(); // Get patient ID from input
+            $.ajax({
+                url: '/api/insurancedata/' + patientID, // API endpoint with patient ID
+                type: 'GET', // Method type
+                success: function(response) {
+                    // Display response data in 'insuranceInfoResult' div
+                    $('#insuranceInfoResult').html(JSON.stringify(response));
+                },
+                error: function(xhr, status, error) {
+                    // Display error message in 'insuranceInfoResult' div
+                    $('#insuranceInfoResult').html("An error occurred: " + xhr.responseText);
+                }
+            });
+        }
+    </script>
+</body>
+</html>
